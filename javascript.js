@@ -1,3 +1,11 @@
 $(document).ready(function(){
-    $('#body').css("margin-top", parseInt($('.navbar').height())+parseInt($('.navbar').css('padding-top'))+parseInt($('.navbar').css('padding-bottom')));
+    let bool = true;
+    $(".dropdownIcon").click(()=>{
+        if(bool){
+            $(".dropdownIcon").attr("src", "./resources/x-lg.svg");
+        } else {
+            $(".dropdownIcon").attr("src", "./resources/list.svg");
+        }
+        bool = !bool;
+    });
 });

@@ -1,12 +1,28 @@
 *{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 li{
     list-style: none;
+}
+
+p{
+    margin: 0!important;
+}
+
+#about>div>div>ul{
+    margin: 0;
+}
+
+#projects>div>ul{
+    margin: 0;
 }
 
 a{
@@ -18,7 +34,7 @@ a{
     height: 0;
 }
 
-#home{
+#home, #projects{
     background-image: url("https://img.freepik.com/free-photo/design-space-paper-textured-background_53876-42312.jpg?w=2000")
 }
 
@@ -35,6 +51,93 @@ a{
     padding-right: 12px;
 }
 
+.dropdownIcon{
+    width: 25px;
+}
+
+#navbar{
+    background-color: white!important;
+}
+
+#body{
+    padding-top: 56px;
+}
+
+#home{
+    height: 100vh;
+}
+
+#home > div{
+    display: grid;
+    align-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+#home > div > h1{
+    padding: 0 10px 50px 10px;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+#home > div > p{
+    font-size: 1.2em;
+    padding: 0 10px;
+}
+
+.logoImage{
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#about, #contacts{
+    background-color: rgba(var(--bs-tertiary-bg-rgb));
+}
+
+.scroll{
+    width: 100px;
+    color: black;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+}
+
+.arrow span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-bottom: 5px solid #3D3940;
+    border-right: 5px solid #3D3940;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: scroll1 2.5s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -.2s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -.4s;
+}
+
+@keyframes scroll1 {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
 
 @media (min-width: 991.98px) { 
     .nav-item{
