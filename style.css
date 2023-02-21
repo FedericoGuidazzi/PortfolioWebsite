@@ -128,6 +128,19 @@ a{
     color: var(--bs-nav-link-color)!important;
 }
 
+.dropdown-item:active{
+    background-color: transparent!important;
+}
+
+.nascosto{
+    opacity: 0!important;
+    transition: all 1s!important;
+}
+
+.show{
+    opacity: 1!important;
+}
+
 
 @keyframes scroll1 {
     0% {
