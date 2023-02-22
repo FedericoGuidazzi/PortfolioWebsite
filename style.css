@@ -9,6 +9,10 @@ body{
     overflow-x: hidden;
 }
 
+ul{
+    padding: 0!important;
+}
+
 li{
     list-style: none;
 }
@@ -17,11 +21,7 @@ p{
     margin: 0!important;
 }
 
-#about>div>div>ul{
-    margin: 0;
-}
-
-#projects>div>ul{
+#about>div>div>ul, #projects>div>ul{
     margin: 0;
 }
 
@@ -149,6 +149,34 @@ a{
     opacity: 1!important;
 }
 
+#about h2, #projects h2, #contacts h2{
+    font-weight: bold;
+}
+
+#about li{
+    display: inline-block;
+    padding: 3px;
+}
+
+#skillsList > ul > li{
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 3px;
+    font-weight: bold;
+}
+
+#about{
+    padding-bottom: 2rem;
+}
+
+#Skills{
+    margin-bottom: 16px;
+}
+
+#about>div>div>p{
+    font-size: 1.2em;
+}
 
 @keyframes scroll1 {
     0% {
@@ -172,6 +200,17 @@ a{
     .nav-item a, .dropdown-toggle{
        font-size: larger!important;
     }
+    #about>div{
+        display: flex;
+    }
+
+    #Skills{
+        padding-top: 3rem!important;
+    }
+
+    #about > div > div:nth-child(2){
+        padding-left: 2rem;
+    }
 }
 
 @media (max-width: 991.98px) { 
@@ -179,6 +218,8 @@ a{
         border: none!important;
         text-align: right!important;
     }
+
+    
 
 
 }
