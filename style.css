@@ -63,6 +63,10 @@ a{
     width: 25px;
 }
 
+ul>li>a>img{
+    width: 35px;
+}
+
 #navbar{
     background-color: white!important;
 }
@@ -99,7 +103,7 @@ a{
     margin-right: 10px;
 }
 
-#about, #contacts{
+#about, #contacts, body{
     background-color: rgba(var(--bs-tertiary-bg-rgb))!important;
 }
 
