@@ -11,11 +11,17 @@ var dict = {
         'Intro' : "I'm a software engineer, with passion for coding and almost all the tech world.",
         'Intro2' : "Currently I work as Software Engineer at GFT.",
         'AboutMe' : "About Me",
-        'Description' : "nknn",
+        'Description1' : "The passion for technology, in particular for information technology, has been with me throughout my life, this can be testified by the university studies that I have chosen.",
+        'Description2' : "I find it beautiful how information technology can be combined with any area of ​​our lives, enriching it, facilitating it and giving it an irresistible charm, from my point of view.",
+        'Description3' : "I am very intrigued by the technologies in development and how they are exponentially advancing all the areas in which they are used, thus keeping me updated on new technologies.",
+        'Description4' : "In conclusion, I specify, that writing code and solving problems are activities that I find very rewarding and satisfying, especially if the difficulties that are solved can change everyone's life, even if only in a small part, thus taking a small step towards a better world.",
+        'Skills':'Skills',
+        'Projects':'Projects',
+        'Contacts':'Contacts',
     },
     it: {
         'Home': 'Home',
-        'About': 'Su di me',
+        'About': 'Chi Sono',
         'Projects': 'Progetti',
         'Contacts': 'Contatti',
         'Language' : 'Lingua',
@@ -24,8 +30,14 @@ var dict = {
         'Hi' : "Ciao, Sono Federico Guidazzi",
         'Intro' : "Sono un ingegnere informatico, appassionato di programmazione e quasi tutto quello che fa parte del mondo tecnologico.",
         'Intro2' : "Attualmente lavoro come ingegnere informatico presso GFT.",
-        'AboutMe' : "Su di me",
-        'Description' : "nknn",
+        'AboutMe' : "Chi Sono",
+        'Description1' : "La passione per la tecnologia, in particolare per l'informatica, mi ha accompagnato da sempre nel corso della mia vita, questo può essere testimoniato dal percorso di studi universitari che ho scelto.",
+        'Description2' : "Trovo bellissimo come l'informatica si posso sposare con qualsiasi ambito della nostra vita, arricchendolo, facilitandolo e donandogli un fascino irresistibile, dal mio punto di vista.",
+        'Description3' : "Sono molto incuriosito dalle tecnologie informatiche in sviluppo e di come queste stiano facendo avanzare in modo esponenziale tutti gli ambiti in cui esse trovano utilizzo, facendomi così rimanere al passo coi tempi.",
+        'Description4' : "Concludo, specificando, che scrivere codice e risolvere problemi è un'attività che trovo molto ripagante e soddisfacente, sopratutto se le difficoltà che si vanno a risolvere possono cambiare, anche se solo in piccola parte, la vita di tutti, facendo così un piccolo passo verso un mondo migliore.",
+        'Skills':'Competenze',
+        'Projects':'Progetti',
+        'Contacts':'Contatti',
     },
     
 }
@@ -83,10 +95,11 @@ $(document).ready(function(){
     setInterval(function () {
         const observer = new IntersectionObserver((entities)=>{
             entities.forEach((entry=>{
-                if(entry.target.getBoundingClientRect().top<=70 && entry.target.getBoundingClientRect().bottom>=70){
+                var center = window.innerHeight / 2;
+                if(entry.target.getBoundingClientRect().top<=center && entry.target.getBoundingClientRect().bottom>=center){
                     var string = $(entry.target).attr("id").charAt(0).toUpperCase() + $(entry.target).attr("id").slice(1);
                     $('#'+string).css('color', 'black');
-                } else if(entry.target.getBoundingClientRect().bottom<=70 && entry.target.getBoundingClientRect().top<=0){
+                } else {
                     var string = $(entry.target).attr("id").charAt(0).toUpperCase() + $(entry.target).attr("id").slice(1);
                     $('#'+string).css('color', 'var(--bs-nav-link-color)');
                 }
@@ -98,6 +111,4 @@ $(document).ready(function(){
         
     }, 1000);
 
-    
-    
 });

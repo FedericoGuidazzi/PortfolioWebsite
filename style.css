@@ -38,6 +38,14 @@ a{
     background-image: url("https://img.freepik.com/free-photo/design-space-paper-textured-background_53876-42312.jpg?w=2000")
 }
 
+.navbar-brand{
+    color: var(--bs-nav-link-color)!important;
+}
+
+.navbar-brand:hover{
+    color: black!important;
+}
+
 .nav-item{
     text-align: right;
     border-top: 1px solid darkgray;
