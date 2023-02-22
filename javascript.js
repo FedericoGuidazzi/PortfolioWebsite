@@ -71,18 +71,32 @@ $(document).ready(function(){
         entities.forEach((entry=>{
             if(entry.isIntersecting){
                 entry.target.classList.add('show');
-                var string = $(entry.target).attr("id").charAt(0).toUpperCase() + $(entry.target).attr("id").slice(1);
-                $('#'+string).css('color', 'black');
             } else {
                 entry.target.classList.remove('show');
-                var string = $(entry.target).attr("id").charAt(0).toUpperCase() + $(entry.target).attr("id").slice(1);
-                $('#'+string).css('color', 'var(--bs-nav-link-color)');
             }
         }));
     });
 
     const hiddenElements = document.querySelectorAll('.nascosto');
     hiddenElements.forEach((el)=>observer.observe(el));
+
+    setInterval(function () {
+        const observer = new IntersectionObserver((entities)=>{
+            entities.forEach((entry=>{
+                if(entry.target.getBoundingClientRect().top<=70 && entry.target.getBoundingClientRect().bottom>=70){
+                    var string = $(entry.target).attr("id").charAt(0).toUpperCase() + $(entry.target).attr("id").slice(1);
+                    $('#'+string).css('color', 'black');
+                } else if(entry.target.getBoundingClientRect().bottom<=70 && entry.target.getBoundingClientRect().top<=0){
+                    var string = $(entry.target).attr("id").charAt(0).toUpperCase() + $(entry.target).attr("id").slice(1);
+                    $('#'+string).css('color', 'var(--bs-nav-link-color)');
+                }
+            }));
+        });
+        
+        const hiddenElements = document.querySelectorAll('.nascosto');
+        hiddenElements.forEach((el)=>observer.observe(el));
+        
+    }, 1000);
 
     
     
